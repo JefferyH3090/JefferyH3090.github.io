@@ -9,26 +9,76 @@
 
     <!--Body Section-->
     <body>
-        <div class="Resume">
+        <div class="resume">
             <header>
-                <h1>Jeffery Huang </h1>
-                <h2>Computer Science Major</h2>
+                <div class="head-left-side-page">
+                    <img class="image" src="assets/image.png" alt="Profile Photo">
+                </div>
+
+                <div class="head-right-side-page">
+                    <h1>Jeffery Huang </h1>
+                    <h2>Computer Science Major</h2>
+                </div>
+
             </header>
-            
-            <nav>
-                <a href="#summary">Summary</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
-            </nav>
 
             <main>
+                <!--Left Side of Page-->
+                <div class="body-left-side-page">
+
+                    <!--Education Section-->
+                    <section class="education">
+                        <h3>Education</h3>
+                        <p>
+                            2023-2027 <br>
+                            Hunter College of <br>
+                            the City University <br>
+                            of New York <br>
+                            GPA: 3.4
+                        <p>
+                        
+                        <div>
+                            <h4>Course Work</h4>
+                                <ul>
+                                    <li>Analysis and Design</li>
+                                    <li>Operating System</li>
+                                    <li>Database Design & Management</li>
+                                    <li>Web Development</li>
+                                    <li>Game Engine Development</li>
+                                </ul>
+                        </div>
+                    </section>
+
+                    <!--Contact Section-->
+                    <section class ="contact">
+                        <h3>Contact</h3>
+                        <p>
+                            <ul>
+                                <li>(212) 555-0147</li>
+                                <li>JefferyH102@gmail.com</li>
+                                <li>United States, New York, NY</li>
+                            </ul>
+
+                        </p>
+                    </section>
+
+                    <!--Links Section-->
+                    <section class="links">
+                        <h3>Links</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="https://github.com/JefferyH3090">GitHub</a></li>
+                            </ul>
+                        </nav>
+                        
+                    </section>
+                </div>
+
                 <!--Right Side of Page-->
-                <div class="Right-Side-Page">
+                <div class="body-right-side-page">
 
                     <!--Summary Section-->
-                    <section class="Summary" id="summary">
+                    <section class="summary">
                         <h3>Professional Summary</h3>
                         <p>Currently a student majoring computer science with experience 
                             in Java, Python, C++, HTML, CSS, JavaScript, and SQL. Strong 
@@ -38,9 +88,9 @@
                         </p>
                     </section>
 
-                    <!--Experience Section-->
-                    <section class="Experience" id="experience">
-                        <h3>Experience</h3>
+                    <!--Project Section-->
+                    <section class="project">
+                        <h3>Projects</h3>
 
                         <h4>Battle Simulation - Spring 2023</h3>
                         <ul>
@@ -55,7 +105,7 @@
                                 scheduling, memory management, and disk I/O operations.</li>
                         </ul>
 
-                        <h3>Online Retail Database - Summer 2026</h3>
+                        <h4>Online Retail Database - Summer 2026</h4>
                         <ul>
                             <li>Designed and implemented a relational database using SQL to 
                                 model customers, products, orders, suppliers, and inventory relationships.</li>
@@ -63,10 +113,10 @@
                     </section>
 
                     <!--Skills Section-->
-                    <section class="Skills" id="skills">
+                    <section class="skills">
                         <h3>Skills</h3>
 
-                        <table>
+                        <table class="table">
                             <tr>
                                 <td>Languages:</td>
                                 <td>Java, Python, C++, JavaScript</td>
@@ -76,81 +126,25 @@
                                 <td>Web:</td>
                                 <td>HTML, CSS</td>
                             </tr>
+
+                            <tr>
+                                <td>Database:</td>
+                                <td>MySQL, SQLite</td>
+                            </tr>
                         </table>
-                    </section>
-                </div>
-
-                <!--Left Side of Page-->
-                <div class="Left-Side-Page">
-
-                    <!--Education Section-->
-                    <section class="Education" id="education">
-                        <h3>Education</h3>
-                        <p>
-                            2023-2027 <br>
-                            Hunter College of <br>
-                            the City University <br>
-                            of New York <br>
-                            GPA: 3.4
-                        <p>
-
-                        <div>
-                            <h4>Course Work</h4>
-                                <table>
-                                    <tr>
-                                        <th>Course</th>
-                                        <th>Topics</th>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Analysis and Design</td>
-                                        <td>Object Oriented Programming, Data Structures</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td>Operating System</td>
-                                        <td>OS Architecture, Processes, CPU Scheduling, Concurrency</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Database Design & Management</td>
-                                        <td>Relational Databases, SQL, ER Modeling, Relational Algebra, Normalization</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Web Development</td>
-                                        <td>HTML, CSS, JavaScript</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Game Engine Development</td>
-                                        <td>Engine Architecture & Loops, Rendering System, CMake, Design Patterns</td>
-                                    </tr>
-
-                                </table>
-                        </div>
-                    </section>
-
-                    <!--Contact Section-->
-                    <section class ="Contact" id="contact">
-                        <h3>Contact</h3>
-                        <p>
-                            <ul>
-                                <li>(212) 555-0147</li>
-                                <li>JefferyH102@gmail.com</li>
-                                <li>United States, New York, NY</li>
-                            </ul>
-
-                        </p>
                     </section>
                 </div>
 
             </main>
 
             <!--Footer Section-->
-            <div class="Footer">   
-                <p>&copy; 2026 Jeffery Huang</p>
-            </div>
+            <footer>   
+                <div class="footer-left-side-page">
+                    <p>&copy; 2026 Jeffery Huang</p>
+                </div>
+
+                <div class="footer-right-side-page"></div>     
+            </footer>
         </div>
     </body>
 </html>
