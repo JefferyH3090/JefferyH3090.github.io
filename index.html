@@ -2,149 +2,172 @@
 <html>
     <!--Head Section-->
     <head>
-        <title>Jeffery Huang - Resume</title>
-    
+        <title>Jeffery Huang - CSCI Portfolio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     </head>
 
     <!--Body Section-->
     <body>
-        <div class="resume">
+        <div class="portfolio" id="home">
+            <!--Header-->
             <header>
-                <div class="head-left-side-page">
-                    <img class="image" src="assets/image.png" alt="Profile Photo">
-                </div>
+                <nav>
+                    <a href="#home" class="logo">JH</a>
 
-                <div class="head-right-side-page">
-                    <h1>Jeffery Huang </h1>
-                    <h2>Computer Science Major</h2>
-                </div>
+                    <div class="links">
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div>
 
+                </nav>
             </header>
 
+            <!--Main-->
             <main>
-                <!--Left Side of Page-->
-                <div class="body-left-side-page">
 
-                    <!--Education Section-->
-                    <section class="education">
-                        <h3>Education</h3>
-                        <p>
-                            2023-2027 <br>
-                            Hunter College of <br>
-                            the City University <br>
-                            of New York <br>
-                            GPA: 3.4
-                        <p>
-                        
-                        <div>
-                            <h4>Course Work</h4>
-                                <ul>
-                                    <li>Analysis and Design</li>
-                                    <li>Operating System</li>
-                                    <li>Database Design & Management</li>
-                                    <li>Web Development</li>
-                                    <li>Game Engine Development</li>
-                                </ul>
+                <!--About Section-->
+                <section id="about">
+                    <div class="about-content">
+                        <p class="welcome-text">Welcome to my Portfolio</p>
+                        <h1>Hi, Im Jeffery</h1>
+                        <p class="subtitle">Computer Science Student & Aspiring Software Developer</p>
+                        <p class="about-description">
+                            I'm passionate about building software, testing new ideas, 
+                            <br>and learning new things.
+                        </p>
+
+                        <div class="project-button-container">
+                            <a href="#projects" class="project-button"> 
+                                View My Projects ↓
+                            </a>
                         </div>
-                    </section>
+                    </div>
+                    
+                    <div class="sky">
+                        <div class="moon"><img src="assets/moon.png" alt="moon"></div>
+                        <div class="cloud cloud-one"><img src="assets/cloud1.png" alt="cloud"></div>
+                        <div class="cloud cloud-two"><img src="assets/cloud2.png" alt="cloud"></div>
+                        <div class="man"><img src="assets/man_fishing.png" alt="man"></div>
+                    </div>
+                </section>
 
-                    <!--Contact Section-->
-                    <section class ="contact">
-                        <h3>Contact</h3>
-                        <p>
-                            <ul>
-                                <li>(212) 555-0147</li>
-                                <li>JefferyH102@gmail.com</li>
-                                <li>United States, New York, NY</li>
-                            </ul>
+                <!--Project Section-->
+                <section id="projects">
+                    <div class="project-header">
+                        <p class="work-text">My Work</p>
+                        <h2>Projects</h2>
+                        <p class="project-description">Here are some projects that I have worked on.</p>
+                    </div>
 
-                        </p>
-                    </section>
+                    <!--Projects that are formatted as individual cards-->
+                    <div class="project-grid">
 
-                    <!--Links Section-->
-                    <section class="links">
-                        <h3>Links</h3>
-                        <nav>
-                            <ul>
-                                <li><a href="https://github.com/JefferyH3090">GitHub</a></li>
-                            </ul>
-                        </nav>
-                        
-                    </section>
-                </div>
+                        <!--Resume-->
+                        <article class="project-card">
+                            <img src="assets/resume.png" alt="Resume Website">
 
-                <!--Right Side of Page-->
-                <div class="body-right-side-page">
+                            <div class="project-content">
+                                <h3>Resume Website</h3>
+                                <p>
+                                    A personal resume website built using HTML and CSS,
+                                    showcasing my education, technical skills, and projects through a structured web layout.
+                                </p>
+                            </div>
+                        </article>
 
-                    <!--Summary Section-->
-                    <section class="summary" id="summary">
-                        <h3>Professional Summary</h3>
-                        <p>Currently a student majoring computer science with experience 
-                            in Java, Python, C++, HTML, CSS, JavaScript, and SQL. Strong 
-                            foundation in data structures, algorithms, databases, and object-oriented 
-                            programming, with hands-on experience developing academic software projects.
-                            Very enthusiastic about learning new skills and knowledge.
-                        </p>
-                    </section>
+                        <!--OS Simulation-->
+                        <article class="project-card">
+                            <img src="assets/sim_os.png" alt="Operating System Simulation">
 
-                    <!--Project Section-->
-                    <section class="project">
-                        <h3>Projects</h3>
+                            <div class="project-content">
+                                <h3>Operating System Simulation</h3>
+                                <p>
+                                    A C++ simulation of an operating system process. It includes cpu scheduling, memory management,
+                                    I/O queues & interrupt, and thread synchronization.
+                                </p>
+                            </div>
+                        </article>
 
-                        <h4>Battle Simulation - Spring 2023</h3>
-                        <ul>
-                            <li>Developed a C++ battle simulation using object-oriented programming, 
-                                inheritance, polymorphism, and data structures.
-                            </li>
-                        </ul>
+                        <!--Retail Store DB-->
+                        <article class="project-card">
+                            <img src="assets/retail_store_db.png" alt="Retail Store Database">
 
-                        <h4>Operating System Simulation - Fall 2025</h3>
-                        <ul>
-                            <li>Developed a C++ operating system simulator implementing process 
-                                scheduling, memory management, and disk I/O operations.</li>
-                        </ul>
+                            <div class="project-content">
+                                <h3>Retail Store Database</h3>
+                                <p>
+                                    A relational database designed using SQL to manage customers, 
+                                    products, orders, suppliers, and their relationships.
+                                </p>
+                            </div>
+                        </article>
 
-                        <h4>Online Retail Database - Summer 2026</h4>
-                        <ul>
-                            <li>Designed and implemented a relational database using SQL to 
-                                model customers, products, orders, suppliers, and inventory relationships.</li>
-                        </ul>
-                    </section>
+                        <!--Battle Simulation-->
+                        <article class="project-card">
+                            <img src="assets/battle_sim.png" alt="C++ Battle Simulation">
 
-                    <!--Skills Section-->
-                    <section class="skills">
-                        <h3>Skills</h3>
+                            <div class="project-content">
+                                <h3>Battle Simulation</h3>
+                                <p>
+                                    A turn-based battle simulation developed in C++, featuring 
+                                    character classes, enemy encounters, and combat mechanics using 
+                                    object-oriented programming.
+                                </p>
+                            </div>
+                        </article>
 
-                        <table class="table">
-                            <tr>
-                                <td>Languages:</td>
-                                <td>Java, Python, C++, JavaScript</td>
-                            </tr>
+                        <!--BETA Game-->
+                        <article class="project-card">
+                            <img src="assets/c++_game.png" alt="C++ Game">
 
-                            <tr>
-                                <td>Web:</td>
-                                <td>HTML, CSS</td>
-                            </tr>
+                            <div class="project-content">
+                                <h3>Software Game (In Progress)</h3>
+                                <p>
+                                    An experimental C++ game project exploring window 
+                                    creation, rendering, and game development 
+                                    using CMake and graphics libraries.
+                                </p>
+                            </div>
+                        </article>
 
-                            <tr>
-                                <td>Database:</td>
-                                <td>MySQL, SQLite</td>
-                            </tr>
-                        </table>
-                    </section>
-                </div>
+                        <!--CS Study Guide--> 
+                        <article class="project-card">
+                            <img src="assets/cs_study_guide.png" alt="CS Study Guide">
 
+                            <div class="project-content">
+                                <h3>CS Study Guide (In Progress)</h3>
+                                <p>
+                                    A web-based learning/reviewing platform designed to 
+                                    organize computer science topics, with planned 
+                                    features for user accounts, notes, and bookmarks.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!--Contact Section-->
+                <section id="contact">
+                    <p class="touch-text">Get In Touch</p>
+                    <h2>Let's Connect!</h2>
+                    <p class="contact-description">I'm always open to collaborations.</p>
+
+                    <div class="contact-button-container">
+                        <a href="mailto::jhuang3090@gmail.com" class="email-button"><i class="fa-solid fa-envelope"></i>Email</a>
+                        <a href="https://github.com/JefferyH3090" class="github-button"><i class="fa-brands fa-github"></i>GitHub</a>
+                    </div>
+                    
+                </section>
             </main>
 
-            <!--Footer Section-->
+            <!--Footer-->
             <footer>   
-                <div class="footer-left-side-page">
-                    <p>&copy; 2026 Jeffery Huang</p>
-                </div>
-
-                <div class="footer-right-side-page"></div>     
+                <p>&copy; 2026 Jeffery Huang</p>    
             </footer>
-        </div>
+        </div>  
     </body>
 </html>

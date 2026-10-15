@@ -2,140 +2,564 @@
     box-sizing: border-box;
 }
 
-h3 {
-    font-size: 18px;
-}
-
-h4 {
-    font-size: 14px;
-}
-
-p {
-    font-size: 16px;
-}
-
-.resume {
-    width: 8.5in;
-    min-height: 11in;
-    margin: 30px auto;
-    background-color: white;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    font-family: "Times New Roman", Times, serif;
-}
-
-header {
-    display: flex;
-    align-items: center;
-}
-
-.image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-main {
-    display: flex;
-    flex: 1;
-}
-
-.head-left-side-page {
-    display: flex;
-    width: 30%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(138, 33, 138);
-    padding: 20px 0px;
-}
-
-.head-right-side-page {
-    width: 70%;
-    text-align: center;
-    padding: 20px 0px;
-    border-bottom: 3px solid black;
-}
-
-
-.body-left-side-page {
-    width: 30%;
-    padding: 0px 25px;
-    background-color: rgb(138, 33, 138);
-}
-
-.body-right-side-page {
-    width: 70%;
-    padding: 0px 50px;
-}
-
-.footer-left-side-page {
-    display: flex;
-    flex-direction: column;
-    padding: 0px 25px;
-    width: 30%;
-    background-color: rgb(138, 33, 138);
-}
-
-.footer-right-side-page {
-    width: 70%;
-}
-
-.education h3 {
-    border-bottom: 2px solid black;
-}
-
-.contact h3 {
-    border-bottom: 2px solid black;
-}
-
-.links h3 {
-    border-bottom: 2px solid black;
-}
-
-.summary h3{
-    border-bottom: 2px solid black;
-}
-
-
-.project h3{
-    border-bottom: 2px solid black;
-}
-
-.skills h3{
-    border-bottom: 2px solid black;
-}
-
-.table{
-    border-collapse: collapse;
-}
-
-.table td{
-    text-align: left;
-    padding-left: 20px;
-}
-
-nav a {
-    text-decoration: none;
-}
-
-.summary p {
-    font-size: 50px;
+body {
+    background-color: rgb(6, 6, 23);
+    color: white;
+    margin: 0;
+    font-family:'Courier New', Courier, monospace;
 }
 
 /*
-    Specificity challenge:
-    #summary p has a higher specificity than .summary p and p,
-    so the font-size of the paragraph in summary is changed to 18px
-    instead of 16px or 50px. 
+    Controls the portfolio (container)
+    Note: This extra container is optional because the same layout could
+          be achieved by applying these CSS properties directly to the body.
 
-    As their specificity values are shown below (ID, Class, Element):
-    p = 0-0-1
-    .summary p = 0-1-1
-    #summary p = 1-0-1
+          Just a preference and habit of organization
 
+    display-flex, direction-column: Ensures that the layout of the portfolio is top to bottom.
 */
-#summary p {
+.portfolio {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+    position-sticky: For this project, I wanted the navbar to remain on the top of the website when
+                     user scrolls down so that they can still access it.
+    top-0: Ensures that the navbar sticks to the top of the viewport (visible area of webpage) when scrolling.
+    z-index-100: Ensures that the navbar is on top of everything else when scrolling.
+*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/*
+    flex-box: The content of the navbar is arranged in a row (default).
+    justify-content: Separates the logo and links .
+    padding: creates Space 10px up and down while 4% on both side inside the navbar.
+    border-bottom: Creates the line separating the navbar and the main body.
+*/
+nav {
+    display: flex;
+    background-color: rgb(19, 19, 33);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 4%;
+    border-bottom: 1px solid rgb(51, 51, 74);
+}
+
+/*
+    Creates the logo
+*/
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border: 2px solid rgb(168, 85, 247);
+    border-radius: 10px;
+    padding: 16px 12px;
+}
+
+.logo:hover {
+    color: orange;
+}
+
+/*
+    flex: Row like order.
+    gap-30px: Creates gap in between each links.
+*/
+.links {
+    display: flex;
+    gap: 30px;
+}
+
+/*
+    text-decoration-none: Removes the underlink of the link.
+*/
+.links a {
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: #a855f7;
+}
+
+/*
+    flex: Arrange the items inside #about in a row (content and the moon  drawing).
+    min-height-60vh: Make sure the #about section is at least 60% of the viewport height
+                     I want some extra space inside the #about section.
+    padding: Match the navbar alignment.
+    border-bottom: Creates a line at the bottom of the #about section to separate it with the #projects 
+                   section.
+*/
+#about {
+    display: flex;
+    min-height: 60vh;
+    padding: 10px 4%;
+    border-bottom: 1px solid rgb(51, 51, 74);
+}
+
+/*
+    align-items-flex-start: Align the content to the left in the flexbox.
+    justify-content-center: Align the content to be in the center of the flexbox 
+                            with reference to the horizontal axis.
+    width-60%: The width of the content is 60% of the #about section.
+*/
+.about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+}
+
+/*
+    Modify the texts of the #about section.
+    margin-0-0-8px-0: Reduces the vertical distance between each text.
+*/
+.welcome-text {
+    font-size: 20px;
+    color: rgb(192, 132, 252);
+    margin: 0 0 8px 0;
+}
+
+#about h1 {
+    font-size: 56px;
+    margin: 10px 0;
+    margin: 0 0 8px 0;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: rgb(203, 213, 225);
+    margin: 0 0 8px 0;
+}
+
+.about-description {
+    font-size: 20px;
+    color: rgb(189, 192, 199);
+}
+
+/*
+    Creates a button that directs the user viewport to the start of the #projects section.
+*/
+.project-button {
     font-size: 18px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(144, 68, 215);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.project-button:hover {
+    font-weight: bold;
+    color: orange;
+}
+
+/*
+    scroll-margin-top-85px: Creates extra space above the #projects section when user click 
+                            the projects button to the #projects section.
+
+                            This is because I had the navbar to be able to move as the user scrolls
+                            thus, when the user click the projects button and it directs them to that
+                            section, it will put the start of the projects section underneath the navbar.
+    padding: Aligns the projects section with the rest of the other section.
+*/
+#projects {
+    background-color: rgb(23, 23, 43);
+    scroll-margin-top: 85px;
+    padding: 20px 4%;
+    border-bottom: 1px solid rgb(51, 51, 74);
+}
+
+/*
+    Modify the texts of the #projects section
+    margin-0-0-8px-0: Reduces the vertical distance between each text
+*/
+.work-text {
+    font-size: 20px;
+    color: rgb(192, 132, 252);
+    margin: 0 0 8px 0;
+}
+
+#projects h2 {
+    font-size: 35px;
+    color: rgb(203, 213, 225);
+    margin: 0 0 20px 0;
+}
+
+.project-description {
+    font-size: 18px;
+    color: rgb(189, 192, 199);
+    margin: 0 0 8px 0;
+}
+
+/*
+    display-grid: Arranges the projects in grid like order (rows and columns).
+                  Flex arranges in only one direction (either row or column).
+    grid-template-columns-repeat(3, minmax(0, 1fr)): Makes it so there are 3 columns in each row with set size.
+                                                     repeat: repeat the definitions
+                                                     3: 3 columns
+                                                     minmax: 0 is the smallest width
+                                                     1fr: 1 fraction of avaliable space is largest
+    gap (modern name, same thing as grid-gap): Space between each projects.
+*/
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+
+.project-card {
+    color: rgb(189, 192, 199);
+    background-color: rgb(6, 6, 23);
+    border: 1px solid rgb(51, 51, 74);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/*
+    display-block: Makes it so the images behave as a block-level element instead of an 
+                   inline element.
+                   Removes the extra space underneath the image.
+                   Makes it more compact.
+    fill: Makes the whole image fit according to its specified size by stretching and without cropping.
+*/
+.project-card img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: fill;
+    border-radius: 6px;
+}
+
+/*
+    Modify the #contact section
+*/
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 4%;
+}
+
+/*
+    Modify the texts of the #contact section.
+    margin-0-0-8px-0: Reduces the vertical distance between each text.
+*/
+.touch-text {
+    font-size: 20px;
+    color: rgb(192, 132, 252);
+    margin: 0 0 8px 0;
+}
+
+#contact h2 {
+    font-size: 35px;
+    color: rgb(203, 213, 225);
+    margin: 0 0 10px 0;
+}
+
+.contact-description {
+    font-size: 18px;
+    color: rgb(189, 192, 199);
+    margin: 0 0 30px 0;
+}
+
+/*
+    Controls the layout of the buttons in general
+*/
+.contact-button-container{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+/*
+    Controls the layout of the email button
+*/
+.email-button {
+    font-size: 18px;
+    color: white;
+    background-color: rgb(144, 68, 215);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.email-button:hover {
+    color: orange;
+}
+
+/*
+    Controls the layout of the github button 
+*/
+.github-button {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(73, 31, 113);
+    border-radius: 10px;
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.github-button:hover {
+    color: orange;
+}
+
+.github-button:visited {
+    color: orange;
+}
+
+/*
+    Modify the footer section
+*/
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgb(51, 51, 74);
+    color: rgb(170, 170, 170);
+}
+
+/*
+    A simple illustration design to add some decoration to the website (only on desktop)
+*/
+.sky {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    width: 40%;   
+}
+
+.moon {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 1;
+    position: relative;
+    top: 2%;
+    left: 100px;
+
+    background:
+        radial-gradient(circle at 30% 35%,
+            rgba(120, 145, 220, 0.35) 0%,
+            transparent 25%),
+
+        radial-gradient(circle at 70% 60%,
+            rgba(110, 135, 210, 0.3) 0%,
+            transparent 30%),
+
+        radial-gradient(circle at 45% 75%,
+            rgba(140, 160, 220, 0.3) 0%,
+            transparent 20%),
+
+        radial-gradient(circle at 40% 35%,
+            #eef1ff,
+            #b8c8ff);
+
+    box-shadow:
+        0 0 8px #d6ddff,
+        0 0 20px rgba(170, 190, 255, 0.4);
+}
+
+.moon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cloud {
+    position: absolute;
+    width: 250px;
+    z-index: 2;
+}
+
+.cloud img {
+    display: block;
+    width: 200%;
+    height: auto;
+}
+
+.cloud-one {
+    top: 50%;
+    left: 50%;
+    transform: translate(40%, -100%);
+}
+
+.cloud-two {
+    top: 50%;
+    left: 50%;
+    transform: translate(20%, -80%) scale(0.7);
+}
+
+.man {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    right: 30px;
+    top: 260px;
+    z-index: 5;
+    isolation: isolate;
+}
+
+.man img {
+    display: block;
+    width: 70%;
+    height: auto;
+}
+
+.man::before {
+    content: "";
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    top: -50px;
+    left: -50px;
+
+    background: radial-gradient(
+        circle,
+        rgba(160, 180, 255, 0.5) 0%,
+        rgba(120, 140, 255, 0.2) 40%,
+        transparent 75%
+    );
+
+    filter: blur(25px);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+
+/* Mobile Device Settings */
+
+/* Responsive layout: viewport width 1024px or smaller. */
+@media (max-width: 1024px) {
+    /* About Section */
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 100%;
+    }
+
+    .links a {
+        font-size: 100%;
+    }
+
+    #about {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        min-height: 50vh;
+        padding: 40px 4%;
+    }
+
+    .about-content {
+        width: 100%;
+        flex: 1;
+    }
+
+    #about h1 {
+        font-size: 36px;
+    }
+
+    .welcome-text {
+        font-size: 18px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+
+    /* Projects Section */
+
+    #projects {
+        padding: 15px 4%;
+        scroll-margin-top: 180px;
+    }
+
+    #projects h2 {
+        font-size: 28px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card img {
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Contact Section */
+    #contact {
+        padding: 40px 4%;
+    }
+
+    #contact h2 {
+        font-size: 28px;
+    }
+
+    .contact-description {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .contact-button-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Mobile Device No Illustrations (no space) */
+
+    .sky {
+        display: none;
+    }
+
+    .moon {
+        display: none;
+    }
+
+    .man {
+        display: none;
+    }
 }
