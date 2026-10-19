@@ -52,9 +52,10 @@ nav {
 
 /*
     Creates the logo
+    1rem: logo size depends on container size
 */
 .logo {
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
@@ -94,13 +95,17 @@ nav {
     min-height-60vh: Make sure the #about section is at least 60% of the viewport height
                      I want some extra space inside the #about section.
     padding: Match the navbar alignment.
+    aspect-ratio-3.2/1: width to height ratio so that when width change, height change as well
+    container-type-inline-size: enables cqw usage 
     border-bottom: Creates a line at the bottom of the #about section to separate it with the #projects 
                    section.
+    
 */
 #about {
     display: flex;
-    min-height: 60vh;
     padding: 10px 4%;
+    aspect-ratio: 3.2 / 1;
+    container-type: inline-size;
     border-bottom: 1px solid rgb(51, 51, 74);
 }
 
@@ -108,14 +113,19 @@ nav {
     align-items-flex-start: Align the content to the left in the flexbox.
     justify-content-center: Align the content to be in the center of the flexbox 
                             with reference to the horizontal axis.
-    width-60%: The width of the content is 60% of the #about section.
+    font-size-2cqw: 2% of #about container width (screen smaller, size smaller too)
+    flex-0-1-60%: starts at 60% avaliable space, can't grow but can shrink to help with shrinking #about section
+                  
+    min-width-0: allows the text container to be able to shrink
 */
 .about-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 60%;
+    font-size: 2cqw;
+    flex: 0 1 60%;
+    min-width: 0;
 }
 
 /*
@@ -123,41 +133,42 @@ nav {
     margin-0-0-8px-0: Reduces the vertical distance between each text.
 */
 .welcome-text {
-    font-size: 20px;
+    font-size: 0.55em;
     color: rgb(192, 132, 252);
     margin: 0 0 8px 0;
 }
 
 #about h1 {
-    font-size: 56px;
+    font-size: 1.8em;
     margin: 10px 0;
     margin: 0 0 8px 0;
 }
 
 .subtitle {
-    font-size: 24px;
+    font-size: 0.65em;
     color: rgb(203, 213, 225);
     margin: 0 0 8px 0;
 }
 
 .about-description {
-    font-size: 20px;
+    font-size: 0.55em;
     color: rgb(189, 192, 199);
 }
 
 /*
     Creates a button that directs the user viewport to the start of the #projects section.
+    max(14px, 2.5cqw) ensures that the button size scales with screen
 */
 .project-button {
-    font-size: 18px;
+    font-size: max(14px, 1cqw);
     color: white;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(144, 68, 215);
-    border-radius: 10px;
-    padding: 10px 20px;
+    border-radius: 0.6em;
+    padding: 0.6em 1.2em;
 }
 
 .project-button:hover {
@@ -343,23 +354,22 @@ footer {
     A simple illustration design to add some decoration to the website (only on desktop)
 */
 .sky {
-    display: flex;
-    flex-direction: row;
+    position: relative;
+    flex: 0 1 40%;
+    min-width: 0;
+    max-width: 600px;
     justify-content: center;
-    align-items: top;
-    width: 40%;   
 }
 
 .moon {
-    width: 350px;
-    height: 350px;
+    width: 55%;
+    height: auto;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
+    position: absolute;
+    top: 3%;
+    left: 7%;
     z-index: 1;
-    position: relative;
-    top: 2%;
-    left: 100px;
 
     background:
         radial-gradient(circle at 30% 35%,
@@ -392,7 +402,8 @@ footer {
 
 .cloud {
     position: absolute;
-    width: 250px;
+    width: 20%;
+    aspect-ratio: 1 / 1;
     z-index: 2;
 }
 
@@ -403,25 +414,23 @@ footer {
 }
 
 .cloud-one {
-    top: 50%;
-    left: 50%;
-    transform: translate(40%, -100%);
+    width: 40%;
+    top: 32%;
+    left: -15%;
 }
 
 .cloud-two {
-    top: 50%;
-    left: 50%;
-    transform: translate(20%, -80%) scale(0.7);
+    width: 27%;
+    top: 47%;
+    left: -15%;
 }
 
 .man {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    right: 30px;
-    top: 260px;
+    position: absolute;
+    width: 60%;
+    top: 45%;
+    left: 45%;
     z-index: 5;
-    isolation: isolate;
 }
 
 .man img {
@@ -434,11 +443,11 @@ footer {
     content: "";
     position: absolute;
 
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
 
-    top: -50px;
-    left: -50px;
+    top: -10%;
+    left: -20%;
 
     background: radial-gradient(
         circle,
@@ -456,8 +465,8 @@ footer {
 
 /* Mobile Device Settings */
 
-/* Responsive layout: viewport width 1024px or smaller. */
-@media (max-width: 1024px) {
+/* Responsive layout: viewport width 768px or smaller. */
+@media (max-width: 768px) {
     /* About Section */
 
     nav {
@@ -484,6 +493,7 @@ footer {
         width: 100%;
         flex-direction: row;
         justify-content: center;
+        scroll-margin-top: 120px;
         min-height: 50vh;
         padding: 40px 4%;
     }
